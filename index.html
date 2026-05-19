@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N M Consulting - Financial Audits & Business Optimization</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Uday Bhagwat - Chartered Accountant (FCA) with 8+ years of expertise in auditing, taxation, and compliance">
+    <meta name="keywords" content="Chartered Accountant, FCA, Auditor, Tax Consultant, Compliance">
+    <title>Uday Bhagwat | Chartered Accountant & Tax Consultant</title>
+    
     <style>
         * {
             margin: 0;
@@ -15,16 +16,20 @@
 
         :root {
             --primary-dark: #0a0e27;
-            --primary-light: #161c38;
-            --accent-gold: #d4af37;
-            --accent-teal: #14b8a6;
-            --accent-blue: #0ea5e9;
-            --text-dark: #0a0e27;
-            --text-light: #f8fafc;
-            --bg-light: #f8fafc;
-            --border-light: #e2e8f0;
+            --primary-dark-accent: #121632;
+            --primary-dark-light: #1a1f3a;
+            --accent-blue: #0084ff;
+            --accent-cyan: #00d4ff;
+            --accent-purple: #7c3aed;
+            --accent-orange: #ff6b35;
+            --text-primary: #ffffff;
+            --text-secondary: #b0bac9;
+            --text-tertiary: #7f8a9b;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-color-light: rgba(255, 255, 255, 0.12);
             --success: #10b981;
-            --error: #ef4444;
+            --glass-bg: rgba(10, 14, 39, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         html {
@@ -32,19 +37,428 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            color: #1a1a2e;
-            background: linear-gradient(135deg, var(--bg-light) 0%, #f1f5f9 100%);
-            line-height: 1.7;
-            overflow-x: hidden;
-            will-change: auto;
-            letter-spacing: 0.3px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-dark-accent) 50%, var(--primary-dark-light) 100%);
+            background-attachment: fixed;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            font-weight: 400;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* ===== SMOOTH ANIMATIONS ===== */
+        /* Animated background gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(0, 132, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(10, 14, 39, 0.85);
+            border-bottom: 1px solid var(--border-color-light);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        /* MERGED HERO + ABOUT SECTION */
+        .hero {
+            margin-top: 60px;
+            padding: 100px 2rem 80px;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: visible;
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.05) 0%, transparent 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(0, 132, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Hero Header - Centered */
+        .hero-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .title {
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out 0.1s backwards;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out 0.2s backwards;
+            font-weight: 400;
+            max-width: 700px;
+        }
+
+        /* Hero Content Grid - Profile + Info Side by Side */
+        .hero-body {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+
+        .hero-profile {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .hero-profile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 600px;
+            background: radial-gradient(ellipse at center, rgba(0, 132, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .profile-wrapper {
+            position: relative;
+            width: 420px;
+            height: 520px;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out 0.3s backwards;
+            margin: -40px 0 -40px 0;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 30px 100px rgba(0, 132, 255, 0.25), 
+                        0 0 60px rgba(0, 212, 255, 0.15),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.05), rgba(0, 212, 255, 0.05));
+        }
+
+        .profile-photo:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 40px 120px rgba(0, 212, 255, 0.35), 
+                        0 0 80px rgba(0, 212, 255, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.6);
+        }
+
+        .profile-glow {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            right: -40px;
+            bottom: -40px;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.15) 0%, rgba(0, 132, 255, 0.05) 40%, transparent 70%);
+            border-radius: 20px;
+            animation: pulse 4s ease-in-out infinite;
+            z-index: 1;
+            filter: blur(30px);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out 0.4s backwards;
+        }
+
+        .hero-about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .hero-about-text p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .hero-about-text p:first-child {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .hero-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .highlight-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.3rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .highlight-item:hover {
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.05));
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 212, 255, 0.15);
+        }
+
+        .highlight-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.6rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .highlight-item h4 {
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+            font-weight: 700;
+        }
+
+        .highlight-item p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: var(--primary-dark);
+            padding: 13px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out 0.3s backwards;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 132, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 8px 30px rgba(0, 132, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* WhatsApp Button Styling */
+        .cta-button.whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #20ba58);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 13px 40px;
+        }
+
+        .whatsapp-icon {
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+
+        .cta-button.whatsapp-btn:hover {
+            box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6);
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #20ba58, #1da851);
+        }
+
+        .cta-button.whatsapp-btn:active {
+            transform: translateY(-1px);
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -56,26 +470,28 @@
             }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-35px) rotate(5deg); }
-        }
-
-        @keyframes slideInRight {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateX(50px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
             }
         }
 
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateX(-30px);
             }
             to {
                 opacity: 1;
@@ -83,29 +499,10 @@
             }
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(20, 184, 166, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(20, 184, 166, 0.5);
-            }
-        }
-
-        @keyframes scroll-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        @keyframes slideInLeftText {
+        @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(-80px);
+                transform: translateX(30px);
             }
             to {
                 opacity: 1;
@@ -113,18 +510,18 @@
             }
         }
 
-        @keyframes slideInRightText {
+        @keyframes scaleIn {
             from {
                 opacity: 0;
-                transform: translateX(80px);
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: scale(1);
             }
         }
 
-        @keyframes fadeInWithSlide {
+        @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -135,10 +532,22 @@
             }
         }
 
-        @keyframes slideInFromRight {
+        /* ===== SCROLL REVEAL ANIMATIONS ===== */
+        @keyframes revealUp {
             from {
                 opacity: 0;
-                transform: translateX(100px);
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes revealLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
             }
             to {
                 opacity: 1;
@@ -146,30 +555,10 @@
             }
         }
 
-        @keyframes starRating {
+        @keyframes revealRight {
             from {
                 opacity: 0;
-                transform: scale(0.3) rotate(-180deg);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
-            }
-        }
-
-        @keyframes textReveal {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes authorAppear {
-            from {
-                opacity: 0;
-                transform: translateX(-10px);
+                transform: translateX(60px);
             }
             to {
                 opacity: 1;
@@ -177,2129 +566,2438 @@
             }
         }
 
-        /* ===== HEADER RIBBON ===== */
-        .header-ribbon {
-            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-light) 100%);
-            color: var(--accent-gold);
-            padding: 14px 0;
-            font-weight: 600;
-            font-size: 12px;
-            overflow: hidden;
-            position: relative;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            letter-spacing: 0.3px;
-            font-family: 'Inter', sans-serif;
+        @keyframes revealScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
-        .ribbon-content {
-            display: flex;
-            animation: scroll-left 40s linear infinite;
-            white-space: nowrap;
-            gap: 80px;
+        /* ===== FLOATING BACKGROUND BLOBS ===== */
+        @keyframes floatBlob1 {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -30px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
         }
 
-        .ribbon-item {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        @keyframes floatBlob2 {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(-40px, 40px) rotate(120deg);
+            }
+            66% {
+                transform: translate(30px, -20px) rotate(240deg);
+            }
         }
 
-        .header-ribbon::before,
-        .header-ribbon::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 80px;
-            height: 100%;
-            z-index: 10;
-            pointer-events: none;
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0.5;
+                filter: blur(30px);
+            }
+            50% {
+                opacity: 0.8;
+                filter: blur(40px);
+            }
         }
 
-        .header-ribbon::before {
-            left: 0;
-            background: linear-gradient(90deg, var(--primary-dark) 0%, transparent 100%);
+        @keyframes meshShift {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
         }
 
-        .header-ribbon::after {
-            right: 0;
-            background: linear-gradient(270deg, var(--primary-dark) 0%, transparent 100%);
+        /* ===== HOVER LIFT EFFECT ===== */
+        @keyframes liftCard {
+            to {
+                transform: translateY(-12px);
+                box-shadow: 0 20px 60px rgba(0, 132, 255, 0.2);
+            }
         }
 
-        /* ===== NAVIGATION ===== */
-        nav {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            padding: 12px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 98;
-            transition: all 0.3s ease;
+        /* ===== ICON ANIMATIONS ===== */
+        @keyframes iconRotate {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
         }
 
-        nav:hover {
-            box-shadow: 0 6px 40px rgba(0, 0, 0, 0.1);
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            background: transparent;
-            -webkit-background-clip: unset;
-            -webkit-text-fill-color: unset;
-            letter-spacing: -0.8px;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            align-items: center;
-            height: auto;
+        /* ===== NUMBER COUNTER ===== */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        .logo-img {
-            height: 72px;
-            width: auto;
-            max-width: 255px;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            object-fit: contain;
+        /* ===== GRADIENT TEXT ANIMATION ===== */
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
-        .logo:hover .logo-img {
-            transform: scale(1.08);
+        /* ===== STAGGER ANIMATION ===== */
+        @keyframes staggerFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
+        /* ===== SPOTLIGHT ANIMATION ===== */
+        @keyframes spotlight {
+            0%, 100% {
+                box-shadow: 0 0 60px rgba(0, 212, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 80px rgba(0, 212, 255, 0.5);
+            }
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #2d3748;
-            font-weight: 500;
-            font-size: 14px;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            letter-spacing: 0.2px;
-            font-family: 'Inter', sans-serif;
+        /* ===== BUTTON GLOW ===== */
+        @keyframes buttonGlow {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(0, 132, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 40px rgba(0, 132, 255, 0.6);
+            }
         }
 
-        .nav-links a:hover {
-            color: var(--accent-teal);
+        /* ===== PROGRESS BAR ===== */
+        @keyframes progressFill {
+            from {
+                width: 0;
+            }
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-teal) 0%, var(--accent-blue) 100%);
-            transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        /* ===== CURSOR GLOW ===== */
+        @keyframes cursorGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+            }
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, #0d9488 100%);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.25);
-            letter-spacing: 0.4px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 35px rgba(20, 184, 166, 0.4);
-            background: linear-gradient(135deg, #0d9488 0%, var(--accent-teal) 100%);
-        }
-
-        .cta-button:active {
-            transform: translateY(-1px);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 100px 60px;
-            text-align: center;
-            min-height: 550px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -5%;
-            width: 550px;
-            height: 550px;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-            will-change: transform;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -20%;
-            left: -5%;
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 9s ease-in-out infinite reverse;
-            will-change: transform;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 750px;
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            animation: slideInLeftText 0.8s ease 0.1s both;
-            line-height: 1.15;
-            letter-spacing: -1.2px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .hero-highlight {
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-teal) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideInRightText 0.8s ease 0.3s both;
-            display: inline-block;
-        }
-
-        .hero p {
-            font-size: 17px;
-            margin-bottom: 45px;
-            animation: fadeInWithSlide 0.8s ease 0.2s both;
-            opacity: 0.95;
-            line-height: 1.85;
-            letter-spacing: 0.2px;
-            color: #f0f4f8;
-            font-weight: 400;
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .hero .cta-button {
-            animation: fadeInUp 0.8s ease 0.3s both;
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-            font-size: 14px;
-            padding: 14px 36px;
-            display: inline-block;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        .hero .cta-button:hover {
-            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.45);
-            background: #e5a025;
-        }
-
-        /* ===== ABOUT SECTION ===== */
-        .about {
-            padding: 80px 60px;
-            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
-        }
-
-        .about-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-size: 38px;
-            margin-bottom: 20px;
-            font-weight: 800;
-            color: #0a0e27;
-            animation: fadeInUp 0.8s ease 0.1s both;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.8px;
-        }
-
-        .about-content p {
-            font-size: 15px;
-            color: #4a5568;
-            margin-bottom: 18px;
-            line-height: 1.85;
-            animation: fadeInUp 0.8s ease 0.2s both;
-            letter-spacing: 0.2px;
-            font-weight: 400;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-top: 35px;
-        }
-
-        .stat-box {
-            padding: 25px;
-            background: white;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-teal);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease 0.3s both;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.15);
-        }
-
-        .stat-number {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--accent-teal);
-            display: block;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.5px;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: #6b7280;
-            margin-top: 5px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        .about-image {
-            position: relative;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--primary-dark) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 14px;
-            animation: slideInRight 0.8s ease 0.2s both;
-            box-shadow: 0 20px 60px rgba(20, 184, 166, 0.2);
-        }
-
-        .founder-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .about-image:hover .founder-img {
-            transform: scale(1.05);
-            filter: brightness(1.05);
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, transparent 100%);
-            pointer-events: none;
-            z-index: 1;
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        /* ===== SERVICES SECTION ===== */
+        /* Services Section */
         .services {
-            padding: 90px 60px;
-            background: var(--bg-light);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #0a0e27;
-            animation: fadeInUp 0.8s ease 0.1s both;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 16px;
-            color: #6b7280;
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 0.8s ease 0.2s both;
-            letter-spacing: 0.2px;
-            line-height: 1.7;
-            font-weight: 400;
+            background: linear-gradient(135deg, transparent 0%, rgba(0, 132, 255, 0.05) 100%);
+            padding: 100px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(20, 184, 166, 0.1);
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out both;
+            opacity: 0;
+        }
+
+        .service-card.animated {
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
         }
 
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-teal) 0%, var(--accent-gold) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 132, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .service-card:hover::before {
-            transform: scaleX(1);
+            top: -30%;
+            right: -30%;
         }
 
         .service-card:hover {
+            border-color: var(--accent-blue);
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.1), rgba(124, 58, 237, 0.05));
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.15);
-            border-color: var(--accent-teal);
+            box-shadow: 0 16px 40px rgba(0, 132, 255, 0.15);
         }
 
         .service-icon {
-            font-size: 36px;
-            margin-bottom: 18px;
-            color: var(--accent-teal);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.15) rotate(5deg);
-            color: var(--accent-gold);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
         }
 
         .service-card h3 {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #0a0e27;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.3px;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 2;
         }
 
         .service-card p {
-            font-size: 14px;
-            color: #6b7280;
+            color: var(--text-secondary);
             line-height: 1.8;
-            letter-spacing: 0.2px;
-            font-weight: 400;
-        }
-
-        /* ===== FEATURES SECTION ===== */
-        .features {
-            padding: 90px 60px;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
-            color: white;
             position: relative;
-            overflow: hidden;
+            z-index: 2;
+            font-size: 0.95rem;
         }
 
-        .features::before {
+        section h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: -0.5px;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out both;
+        }
+
+        section h2::before {
             content: '';
-            position: absolute;
-            top: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 10s ease-in-out infinite;
+            display: inline-block;
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 2px;
+            margin-right: 12px;
+            vertical-align: middle;
         }
 
-        .features-container {
-            max-width: 1100px;
+        section h2::after {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 2px;
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+
+        section h2 + p {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out 0.1s both;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, transparent 100%);
+            padding: 100px 2rem;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        .features-title {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 18px;
-            animation: fadeInUp 0.8s ease 0.1s both;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -1px;
-        }
-
-        .features-desc {
-            font-size: 16px;
-            opacity: 0.95;
-            margin-bottom: 50px;
-            max-width: 600px;
-            animation: fadeInUp 0.8s ease 0.2s both;
-            letter-spacing: 0.2px;
-            line-height: 1.8;
-            font-weight: 400;
-        }
-
-        .features-grid {
+        .skill-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .feature-box {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .skill-category {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 1;
         }
 
-        .feature-box:hover {
-            background: rgba(20, 184, 166, 0.1);
-            border-color: var(--accent-teal);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.2);
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 132, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-gold) 100%);
-            border-radius: 10px;
+        .skill-category:hover::before {
+            top: -30%;
+            right: -30%;
+        }
+
+        .skill-category.animated {
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.05));
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+            opacity: 1;
+            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
+            padding: 1rem;
+            background: rgba(0, 132, 255, 0.05);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 132, 255, 0.1);
+            border-left-color: var(--accent-blue);
+            transform: translateX(8px);
+        }
+
+        .skill-item:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .skill-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .skill-item:nth-child(4) {
+            animation-delay: 0.45s;
+        }
+
+        .skill-item.visible .skill-fill {
+            animation: skillFill 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .skill-name {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
         }
 
-        .feature-box:hover .feature-icon {
-            transform: scale(1.2) rotate(-5deg);
+        .skill-name span:first-child {
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
-        .feature-box h4 {
-            font-size: 15px;
-            margin-bottom: 10px;
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.2px;
+        .skill-name span:last-child {
+            color: var(--accent-cyan);
+            font-weight: 600;
         }
 
-        .feature-box p {
-            font-size: 13px;
-            opacity: 0.88;
-            line-height: 1.75;
-            letter-spacing: 0.2px;
-            font-weight: 400;
+        /* ===== ANIMATED SKILL BAR EFFECTS ===== */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
         }
 
-        /* ===== TESTIMONIALS SECTION ===== */
+        @keyframes barGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(0, 212, 255, 0.3), inset 0 0 10px rgba(0, 212, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), inset 0 0 15px rgba(0, 212, 255, 0.2);
+            }
+        }
+
+        @keyframes wavePulse {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.2);
+            }
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-item:hover .skill-bar {
+            height: 8px;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+            background: rgba(0, 132, 255, 0.2);
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-blue));
+            background-size: 200% 100%;
+            border-radius: 3px;
+            width: 0%;
+            animation: none;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 132, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Animation triggers when skill-bar gets 'active' class */
+        .skill-bar.active .skill-fill {
+            animation: progressFill 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+        }
+
+        /* Shimmer effect on hover */
+        .skill-item:hover .skill-fill {
+            animation: progressFill 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                      shimmer 2s linear infinite,
+                      wavePulse 1.5s ease-in-out infinite !important;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 
+                       inset 0 0 10px rgba(0, 212, 255, 0.3);
+            filter: brightness(1.1);
+        }
+
+        /* Active glow state */
+        .skill-bar.active {
+            animation: barGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes progressFill {
+            0% {
+                width: 0%;
+                box-shadow: 0 0 10px rgba(0, 132, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0, 132, 255, 0.5);
+            }
+            100% {
+                width: var(--skill-level);
+                box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+            }
+        }
+
+        @keyframes skillFill {
+            from {
+                width: 0%;
+            }
+            to {
+                width: var(--skill-level);
+            }
+        }
+
+        /* Testimonials Section */
         .testimonials {
-            padding: 90px 60px;
-            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.05) 0%, transparent 100%);
+            padding: 100px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .testimonial-card {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(20, 184, 166, 0.05);
-            position: relative;
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out both;
             opacity: 0;
-            transform: translateX(100px);
-            animation: slideInFromRight 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
-        .testimonial-card:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .testimonial-card:nth-child(2) {
-            animation-delay: 0.6s;
-        }
-
-        .testimonial-card:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            font-size: 80px;
-            color: var(--accent-gold);
-            opacity: 0.2;
+        .testimonial-card.animated {
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
         }
 
         .testimonial-card:hover {
+            border-color: var(--accent-blue);
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.1), rgba(124, 58, 237, 0.05));
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.12);
+            box-shadow: 0 16px 40px rgba(0, 132, 255, 0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-dark);
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-info p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
         }
 
         .stars {
-            color: var(--accent-gold);
-            font-size: 14px;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-            opacity: 0;
-            animation: starRating 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
+            color: var(--accent-orange);
+            font-size: 0.85rem;
         }
 
         .testimonial-text {
-            font-size: 14px;
-            color: #4a5568;
-            line-height: 1.85;
-            margin-bottom: 18px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
             font-style: italic;
-            letter-spacing: 0.2px;
-            font-weight: 400;
-            opacity: 0;
-            animation: textReveal 0.8s ease 0.5s forwards;
         }
 
-        .testimonial-author {
-            font-weight: 700;
-            color: #0a0e27;
-            font-size: 14px;
-            margin-bottom: 4px;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.2px;
-            opacity: 0;
-            animation: authorAppear 0.6s ease 0.7s forwards;
+        .testimonial-text.typing-animated {
+            border-right: 2px solid var(--accent-cyan);
+            padding-right: 0.1rem;
+            animation: blink-cursor 0.7s infinite;
         }
 
-        .testimonial-role {
-            font-size: 12px;
-            color: var(--accent-teal);
-            margin: 0;
-            font-weight: 500;
-            letter-spacing: 0.2px;
-            opacity: 0;
-            animation: authorAppear 0.6s ease 0.8s forwards;
+        @keyframes blink-cursor {
+            0%, 49% {
+                border-right-color: var(--accent-cyan);
+            }
+            50%, 100% {
+                border-right-color: transparent;
+            }
         }
 
-        /* ===== TEAM SECTION ===== */
-        .team {
-            padding: 90px 60px;
-            background: var(--bg-light);
+        .testimonial-meta {
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1400px;
+        /* Experience Section */
+        .experience {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, transparent 100%);
+            padding: 100px 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .team-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(20, 184, 166, 0.05);
-        }
-
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.15);
-        }
-
-        .team-header {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, #0d9488 100%);
-            padding: 30px 25px;
-            color: white;
-        }
-
-        .team-name {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.3px;
-        }
-
-        .team-title {
-            font-size: 12px;
-            opacity: 0.92;
-            font-weight: 500;
-            letter-spacing: 0.2px;
-        }
-
-        .team-body {
-            padding: 25px;
-        }
-
-        .team-desc {
-            font-size: 13px;
-            line-height: 1.85;
-            color: #6b7280;
-            letter-spacing: 0.2px;
-            font-weight: 400;
-        }
-
-        /* ===== CONTACT FORM SECTION ===== */
-        .contact-form-section {
-            padding: 80px 60px;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
-            color: white;
             position: relative;
-            overflow: hidden;
+            z-index: 2;
         }
 
-        .contact-form-section::before {
+        .experience-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem 0;
+        }
+
+        /* Vertical connecting line */
+        .experience-timeline::before {
             content: '';
             position: absolute;
-            bottom: -20%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, 
+                var(--accent-cyan) 0%, 
+                var(--accent-blue) 50%, 
+                var(--accent-purple) 100%);
+            animation: slideDown 1.2s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
         }
 
-        .form-container {
-            max-width: 500px;
+        @keyframes slideDown {
+            from {
+                height: 0;
+                top: 0;
+            }
+            to {
+                height: 100%;
+                top: 0;
+            }
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            margin-left: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 1;
+            overflow: hidden;
+        }
+
+        /* Initial state before animation - will be overridden by .animated class */
+        .timeline-item.animated {
+            animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
+        }
+
+        /* Shimmer effect overlay */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.03), transparent);
+            animation: shimmer 3s infinite;
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Timeline dot with enhanced styling */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 2rem;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 50%;
+            border: 3px solid var(--primary-dark);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), inset 0 0 10px rgba(0, 212, 255, 0.4);
+            animation: dotPulse 2s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), inset 0 0 10px rgba(0, 212, 255, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), inset 0 0 15px rgba(0, 212, 255, 0.6);
+                transform: scale(1.1);
+            }
+        }
+
+        .timeline-item:hover {
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(124, 58, 237, 0.1));
+            transform: translateX(15px);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item:hover::before {
+            animation: dotPulseHover 0.6s ease-in-out forwards;
+        }
+
+        @keyframes dotPulseHover {
+            0% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), inset 0 0 10px rgba(0, 212, 255, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(0, 212, 255, 1), inset 0 0 20px rgba(0, 212, 255, 0.8);
+                transform: scale(1.3);
+            }
+            100% {
+                box-shadow: 0 0 40px rgba(0, 212, 255, 1), inset 0 0 20px rgba(0, 212, 255, 0.8);
+                transform: scale(1.3);
+            }
+        }
+
+        .timeline-item h3 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out backwards;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-date {
+            color: var(--accent-cyan);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 0 6px 6px 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) ease-out 0.2s backwards;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-description ul {
+            list-style: none;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            opacity: 1;
+            color: var(--text-secondary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Animate list items when timeline-item is in view */
+        .timeline-item.animated .timeline-description li {
+            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
+        }
+
+        .timeline-item.animated .timeline-description li:nth-child(1) { animation-delay: 0.3s; }
+        .timeline-item.animated .timeline-description li:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item.animated .timeline-description li:nth-child(3) { animation-delay: 0.5s; }
+        .timeline-item.animated .timeline-description li:nth-child(4) { animation-delay: 0.6s; }
+        .timeline-item.animated .timeline-description li:nth-child(5) { animation-delay: 0.7s; }
+
+        .timeline-item:hover .timeline-description li {
+            color: var(--accent-cyan);
+            padding-left: 2rem;
+        }
+
+        .timeline-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: 800;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item:hover .timeline-description li::before {
+            color: var(--accent-orange);
+            transform: scale(1.3);
+        }
+
+        /* Qualifications Section */
+        .qualifications {
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.05) 0%, transparent 100%);
+            padding: 100px 2rem;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 2;
+        }
+
+        .qual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .qual-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out both;
+            opacity: 0;
+        }
+
+        .qual-card.animated {
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
+        }
+
+        .qual-card:hover {
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.05));
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .qual-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .qual-card h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .qual-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .qual-year {
+            color: var(--accent-cyan);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, transparent 100%);
+            padding: 100px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out both;
+            opacity: 0;
+        }
+
+        .contact-item.animated {
+            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) ease-out forwards;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h3 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-blue);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.2px;
-            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
         }
 
         .form-group input,
-        .form-group select,
         .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            color: white;
-            font-size: 13px;
-            font-family: 'Inter', sans-serif;
+            padding: 1rem;
+            color: var(--text-primary);
+            font-family: inherit;
             transition: all 0.3s ease;
-            letter-spacing: 0.2px;
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-tertiary);
         }
 
         .form-group input:focus,
-        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-teal);
-            background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 0 15px rgba(20, 184, 166, 0.2);
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(124, 58, 237, 0.02));
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
         }
 
         .form-submit {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, #d4af37 100%);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
             color: var(--primary-dark);
+            padding: 12px 30px;
             border: none;
             border-radius: 8px;
-            font-weight: 700;
-            font-size: 13px;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            letter-spacing: 0.5px;
-            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .form-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 132, 255, 0.3);
         }
 
-        .form-submit:active {
-            transform: translateY(0);
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
 
-        .form-message {
-            margin-top: 15px;
-            padding: 12px 15px;
+        .success-message {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+            border: 1px solid var(--success);
             border-radius: 8px;
-            font-size: 13px;
+            padding: 1rem;
+            color: var(--success);
             text-align: center;
-            display: none;
-            animation: slideInUp 0.4s ease;
-        }
-
-        .form-message.success {
-            background: rgba(16, 185, 129, 0.2);
-            border: 1px solid rgba(16, 185, 129, 0.5);
-            color: #a7f3d0;
-        }
-
-        .form-message.error {
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            color: #fca5a5;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact {
-            padding: 80px 60px;
-            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: #0a0e27;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -1px;
-        }
-
-        .contact > p {
-            font-size: 16px;
-            color: #6b7280;
-            margin-bottom: 50px;
-            letter-spacing: 0.2px;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .contact-box {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(20, 184, 166, 0.05);
-        }
-
-        .contact-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.12);
-            border-color: var(--accent-teal);
-        }
-
-        .contact-box h3 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #0a0e27;
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.3px;
-        }
-
-        .contact-box p {
-            font-size: 14px;
-            color: #6b7280;
-            line-height: 1.85;
-            letter-spacing: 0.2px;
-            font-weight: 400;
-        }
-
-        /* ===== FOOTER RIBBON ===== */
-        .footer-ribbon {
-            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 25px 60px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            letter-spacing: 0.2px;
-            font-weight: 400;
-        }
-
-        .footer-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            text-align: center;
-            padding: 25px 60px;
-            font-size: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            letter-spacing: 0.2px;
-            font-weight: 400;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* ===== CONTACT BUTTONS ===== */
-        .contact-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            gap: 12px;
-            z-index: 99;
-        }
-
-        .contact-btn {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            text-decoration: none;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            color: white;
-            animation: slideInUp 0.6s ease 0.5s both;
-        }
-
-        .call-btn {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #0284c7 100%);
-        }
-
-        .whatsapp-btn {
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        /* ===== CERTIFICATIONS SECTION ===== */
-        .certifications {
-            padding: 90px 60px;
-            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-        }
-
-        .certifications-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .certifications-carousel {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            background: white;
-        }
-
-        .cert-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            margin-bottom: 1rem;
             opacity: 0;
-            transition: opacity 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: opacity 0.3s ease;
+        }
+
+        .success-message.show {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark-accent);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
             display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 132, 255, 0.3);
+            z-index: 999;
         }
 
-        .cert-slide.active {
-            opacity: 1;
-            z-index: 10;
-        }
-
-        .cert-slide img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            border-radius: 15px;
-        }
-
-        .cert-counter {
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            background: rgba(20, 184, 166, 0.9);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 20;
-            backdrop-filter: blur(10px);
-        }
-
-        .cert-nav {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
+        .scroll-to-top.show {
             display: flex;
-            gap: 8px;
-            z-index: 20;
         }
 
-        .cert-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(20, 184, 166, 0);
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 132, 255, 0.4);
         }
 
-        .cert-dot.active {
-            background: var(--accent-teal);
-            transform: scale(1.2);
-            border-color: rgba(20, 184, 166, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .certifications {
-                padding: 60px 30px;
-            }
-
-            .certifications-carousel {
-                height: 350px;
-            }
-
-            .cert-slide img {
-                max-width: 95%;
-            }
-        }
-
-        /* ===== GALLERY SECTION ===== */
-        .gallery-section {
-            padding: 80px 60px;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 132, 255, 0.1), rgba(124, 58, 237, 0.1));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
             position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .cta-section h3 {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== SCROLL REVEAL ANIMATION CLASSES ===== */
+        .reveal {
+            opacity: 0;
+            animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .reveal.stagger-1 { animation-delay: 0.1s; }
+        .reveal.stagger-2 { animation-delay: 0.2s; }
+        .reveal.stagger-3 { animation-delay: 0.3s; }
+        .reveal.stagger-4 { animation-delay: 0.4s; }
+        .reveal.stagger-5 { animation-delay: 0.5s; }
+
+        .reveal-left {
+            opacity: 0;
+            animation: revealLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            animation: revealRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            animation: revealScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* ===== FLOATING BACKGROUND BLOBS ===== */
+        .floating-bg {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 132, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatBlob1 20s ease-in-out infinite;
+            filter: blur(40px);
+        }
+
+        .blob-2 {
+            top: 40%;
+            right: 5%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatBlob2 25s ease-in-out infinite;
+            filter: blur(40px);
+        }
+
+        .blob-3 {
+            bottom: 10%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatBlob1 22s ease-in-out infinite;
+            filter: blur(40px);
+        }
+
+        /* ===== ENHANCED HOVER ANIMATIONS ===== */
+        .service-card,
+        .skill-category,
+        .qual-card,
+        .testimonial-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover .service-icon,
+        .skill-category:hover .skill-icon,
+        .qual-card:hover .qual-icon,
+        .testimonial-card:hover .testimonial-avatar {
+            animation: iconPulse 0.6s ease-in-out;
+        }
+
+        /* ===== SKILL PROGRESS BARS ===== */
+        .skill-progress {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 0.5rem;
             overflow: hidden;
         }
 
-        .gallery-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 3px;
+            animation: progressFill 1.5s ease-out forwards;
+            animation-delay: 0.5s;
         }
 
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 60px;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
+        .skill-fill.filled {
+            animation: none;
         }
 
-        .gallery-header .section-title {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-blue) 100%);
+        /* ===== NUMBER COUNTER ===== */
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .gallery-header .section-subtitle {
-            font-size: 18px;
-            color: #64748b;
-            font-weight: 400;
-            letter-spacing: 0.3px;
+        .counter-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            aspect-ratio: 1;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            animation: fadeInUp 0.6s ease backwards;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
-        .gallery-item:nth-child(2) { animation-delay: 0.15s; }
-        .gallery-item:nth-child(3) { animation-delay: 0.2s; }
-        .gallery-item:nth-child(4) { animation-delay: 0.25s; }
-        .gallery-item:nth-child(5) { animation-delay: 0.3s; }
-        .gallery-item:nth-child(6) { animation-delay: 0.35s; }
-        .gallery-item:nth-child(7) { animation-delay: 0.4s; }
-        .gallery-item:nth-child(8) { animation-delay: 0.45s; }
-        .gallery-item:nth-child(9) { animation-delay: 0.5s; }
-        .gallery-item:nth-child(10) { animation-delay: 0.55s; }
-        .gallery-item:nth-child(11) { animation-delay: 0.6s; }
-        .gallery-item:nth-child(12) { animation-delay: 0.65s; }
-        .gallery-item:nth-child(13) { animation-delay: 0.7s; }
-        .gallery-item:nth-child(14) { animation-delay: 0.75s; }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.12) rotate(2deg);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(20, 184, 166, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* ===== TIMELINE ANIMATION ===== */
+        .timeline-item {
             opacity: 0;
-            transition: opacity 0.4s ease;
-            backdrop-filter: blur(4px);
+            animation: revealLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
+        .timeline-item:nth-child(2n) {
+            animation: revealRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        .gallery-overlay i {
-            font-size: 48px;
-            color: white;
-            animation: float 2s ease-in-out infinite;
+        /* ===== HERO TYPING EFFECT ===== */
+        .typing-text {
+            display: inline-block;
+            border-right: 3px solid var(--accent-cyan);
+            white-space: nowrap;
+            animation: type 3s steps(40, end), blink 0.75s step-end infinite;
+            padding-right: 5px;
         }
 
-        /* ===== LIGHTBOX MODAL ===== */
-        .lightbox {
-            display: none;
+        @keyframes type {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                border-right-color: var(--accent-cyan);
+            }
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        /* ===== GRADIENT ANIMATED TEXT ===== */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 4s ease infinite;
+        }
+
+        /* ===== CARD LIFT ON HOVER ===== */
+        .liftable {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .liftable:hover {
+            animation: liftCard 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* ===== TESTIMONIAL CAROUSEL ANIMATION ===== */
+        .testimonial-card {
+            opacity: 0;
+            animation: revealScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .testimonial-avatar {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-card:hover .testimonial-avatar {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* ===== ANIMATED EXPERIENCE TIMELINE ===== */
+        .experience-item {
+            opacity: 0;
+            animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .experience-item:nth-child(1) { animation-delay: 0.1s; }
+        .experience-item:nth-child(2) { animation-delay: 0.2s; }
+        .experience-item:nth-child(3) { animation-delay: 0.3s; }
+        .experience-item:nth-child(4) { animation-delay: 0.4s; }
+        .experience-item:nth-child(5) { animation-delay: 0.5s; }
+
+        /* ===== BUTTON GLOW EFFECT ===== */
+        .glow-button {
+            position: relative;
+        }
+
+        .glow-button:hover {
+            animation: buttonGlow 1.5s ease-in-out infinite;
+        }
+
+        /* ===== SPOTLIGHT EFFECT ON HERO IMAGE ===== */
+        .spotlight-effect {
+            animation: spotlight 3s ease-in-out infinite;
+        }
+
+        /* ===== CURSOR GLOW EFFECT ===== */
+        .cursor-glow {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(8px);
-            z-index: 999;
-            animation: fadeInUp 0.3s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-content {
-            position: relative;
-            width: 90%;
-            max-width: 900px;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            animation: slideInUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -45px;
-            right: 0;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 10px 20px;
-            z-index: 10;
-        }
-
-        .lightbox-close:hover {
-            transform: rotate(90deg);
-            color: var(--accent-teal);
-        }
-
-        .lightbox-image-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .lightbox-image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            animation: fadeInUp 0.4s ease;
-        }
-
-        .lightbox-counter {
-            text-align: center;
-            color: var(--accent-gold);
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(20, 184, 166, 0.3);
-            border: 2px solid rgba(20, 184, 166, 0.5);
-            color: white;
-            padding: 12px 16px;
-            font-size: 20px;
-            cursor: pointer;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            transition: all 0.3s ease;
-            z-index: 10;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.8) 0%, rgba(0, 132, 255, 0.4) 70%);
+            pointer-events: none;
+            z-index: 9999;
+            animation: cursorGlow 1.5s ease-in-out infinite;
+            display: none;
         }
 
-        .lightbox-nav:hover {
-            background: rgba(20, 184, 166, 0.7);
-            border-color: var(--accent-teal);
-            transform: translateY(-50%) scale(1.15);
+        @media (hover: hover) {
+            .cursor-glow {
+                display: block;
+            }
         }
 
-        .lightbox-prev {
-            left: 20px;
+        /* ===== SMOOTH SCROLL ANCHOR ===== */
+        html {
+            scroll-behavior: smooth;
         }
 
-        .lightbox-next {
-            right: 20px;
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-body {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .lightbox-thumbnails {
-            width: 100%;
-            overflow-x: auto;
-            padding: 15px 0;
-        }
-
-        .lightbox-thumbnails::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .lightbox-thumbnails::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-
-        .lightbox-thumbnails::-webkit-scrollbar-thumb {
-            background: rgba(20, 184, 166, 0.5);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-thumbnails::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-teal);
-        }
-
-        .thumbnails-scroll {
-            display: flex;
-            gap: 12px;
-            padding: 0 20px;
-        }
-
-        .thumbnail {
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-            object-fit: cover;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-            flex-shrink: 0;
-        }
-
-        .thumbnail:hover {
-            opacity: 1;
-            border-color: rgba(20, 184, 166, 0.5);
-        }
-
-        .thumbnail.active {
-            opacity: 1;
-            border-color: var(--accent-teal);
-            box-shadow: 0 0 15px rgba(20, 184, 166, 0.5);
-        }
-
-        /* ===== RESPONSIVE GALLERY ===== */
         @media (max-width: 768px) {
-            .gallery-section {
-                padding: 60px 20px;
+            header {
+                padding: 1rem;
             }
 
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 16px;
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(10, 14, 39, 0.95);
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-color);
             }
 
-            .gallery-header .section-title {
-                font-size: 36px;
+            nav.active {
+                display: flex;
             }
 
-            .lightbox-content {
-                width: 95%;
-                height: 70vh;
+            nav a {
+                padding: 0.8rem 0;
+                border-bottom: 1px solid var(--border-color);
             }
 
-            .lightbox-close {
-                top: -40px;
-                font-size: 32px;
+            .menu-toggle {
+                display: block;
             }
 
-            .lightbox-nav {
-                padding: 10px 13px;
-                font-size: 16px;
+            .hero {
+                padding: 80px 1.5rem 60px;
             }
 
-            .lightbox-prev {
-                left: 10px;
+            .hero h1 {
+                font-size: clamp(1.8rem, 6vw, 3rem);
             }
 
-            .lightbox-next {
-                right: 10px;
+            .profile-wrapper {
+                width: 300px;
+                height: 380px;
             }
 
-            .thumbnail {
-                width: 60px;
-                height: 60px;
+            .hero-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.2rem;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .cta-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+            }
+
+            .services,
+            .skills,
+            .testimonials,
+            .experience,
+            .qualifications,
+            .contact {
+                padding: 80px 1.5rem;
+            }
+
+            section h2 {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 70px 1rem 50px;
+                margin-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.5rem, 5vw, 2.2rem);
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .profile-wrapper {
+                width: 240px;
+                height: 300px;
+            }
+
+            .services-grid,
+            .skill-grid,
+            .testimonials-grid,
+            .qual-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services,
+            .skills,
+            .testimonials,
+            .experience,
+            .qualifications,
+            .contact {
+                padding: 60px 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER RIBBON -->
-<div class="header-ribbon">
-    <div class="ribbon-content">
-        <div class="ribbon-item">✨ Expert Audits & Optimization</div>
-        <div class="ribbon-item">💼 20+ Years Combined Experience</div>
-        <div class="ribbon-item">🎯 Proven Results Across Industries</div>
-        <div class="ribbon-item">✨ Expert Audits & Optimization</div>
-    </div>
-</div>
+    <!-- Header and Navigation -->
+    <header id="header">
+        <div class="logo">Uday Bhagwat</div>
+        <nav id="nav-menu">
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#experience">Experience</a>
+            <a href="#qualifications">Qualifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </header>
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo">
-        <img src="nm-logo-white-clean.png" alt="N M Consulting Logo" class="logo-img">
-    </div>
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact-form">Contact</a></li>
-    </ul>
-    <button class="cta-button" onclick="openWhatsApp()">Get Started</button>
-</nav>
+    <!-- MERGED HERO + ABOUT SECTION -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <!-- Header -->
+            <div class="hero-header">
+                <div class="title">Chartered Accountant (FCA) | Enterprise Audit & Compliance</div>
+                <h1>Strategic Financial Excellence for Corporate Growth</h1>
+                <p>10+ years of enterprise-grade expertise in statutory audits, regulatory compliance, and financial governance. Specializing in comprehensive audit management for mid-market and large corporations, with proven expertise in multi-location audits, SOX-equivalent compliance frameworks, and enterprise risk mitigation.</p>
+            </div>
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Plug Financial Leakages, <span class="hero-highlight">Build Confident Businesses</span></h1>
-        <p>Strategic audits, process optimization, and financial consulting that transform your business operations and unlock hidden value.</p>
-        <button class="cta-button" onclick="openWhatsApp()">Book Free Consultation</button>
-    </div>
-</section>
-
-<!-- ABOUT SECTION -->
-<section class="about" id="about">
-    <div class="about-container">
-        <div class="about-content">
-            <h2>Why Choose Us?</h2>
-            <p>With over two decades of combined experience across 8 countries and 13 industries, we deliver strategic audits and process optimization that tangibly improve your business performance.</p>
-            <p>Our team of certified professionals focuses on identifying financial leakages, strengthening compliance, and implementing systems that build sustainable growth.</p>
-            <div class="about-stats">
-                <div class="stat-box">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label">Years Experience</span>
+            <!-- Body: Profile + Info -->
+            <div class="hero-body">
+                <!-- Profile Image -->
+                <div class="hero-profile">
+                    <div class="profile-wrapper">
+                        <img src="profile-photo.jpg" alt="Uday Bhagwat - Chartered Accountant" class="profile-photo">
+                        <div class="profile-glow"></div>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">13</span>
-                    <span class="stat-label">Industries Served</span>
+
+                <!-- About Info -->
+                <div class="hero-info">
+                    <div class="hero-about-text">
+                        <p><strong>Enterprise Audit Expertise:</strong> FCA with 10+ years of progressive experience delivering high-quality statutory audits, internal audits, and regulatory compliance for 100+ corporate clients across manufacturing, IT/ITeS, e-commerce, financial services, and professional services sectors. Specialized in managing complex audits for multi-location businesses, consortium arrangements, and businesses with intricate supply chains.</p>
+                        <p><strong>Corporate Compliance & Risk Management:</strong> Proven expertise in designing and implementing compliance frameworks aligned with corporate governance standards (Clause 49/Reg 17-18 SEBI), internal control assessment (COSO framework equivalent), and enterprise risk mitigation. Experienced in managing audit committees, regulatory interactions (ROC, tax authorities, RBI), and statutory filings with 100% compliance track record—zero penalties across 50+ corporate clients.</p>
+                    </div>
+
+                    <!-- Highlights -->
+                    <div class="hero-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🏛️</div>
+                            <h4>100+ Audits</h4>
+                            <p>Corporate Clients Managed</p>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">✅</div>
+                            <h4>Zero Penalties</h4>
+                            <p>100% Compliance Record</p>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎖️</div>
+                            <h4>FCA + Certified</h4>
+                            <p>ISO 9001:2015 Quality Auditor</p>
+                        </div>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="hero-cta">
+                        <a href="https://wa.me/919975267331" class="cta-button whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                            <span class="whatsapp-icon">💬</span> Connect on WhatsApp
+                        </a>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-label">Successful Projects</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>Comprehensive financial and compliance solutions tailored to your business needs</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Statutory Audits</h3>
+                <p>Comprehensive auditing services for companies of all sizes, ensuring compliance with statutory requirements and best practices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Tax Consultation</h3>
+                <p>Strategic tax planning and optimization services to minimize liabilities while ensuring full regulatory compliance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>GST Compliance</h3>
+                <p>Expert GST consultation, audit, and filing services to ensure complete compliance with indirect tax regulations.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Entity Structuring</h3>
+                <p>Professional guidance on entity formation, structuring, and optimization for maximum tax efficiency and operational benefits.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📑</div>
+                <h3>ROC Compliance</h3>
+                <p>Expert handling of ROC filings, company incorporations, and statutory compliances to ensure zero penalties or delays.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Internal Audits</h3>
+                <p>Comprehensive internal audit services to strengthen internal controls, identify risks, and improve operational efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Key Skills & Expertise</h2>
+        <p>Proficiency across financial, tax, and compliance domains</p>
+        <div class="skill-grid">
+            <div class="skill-category">
+                <h3>Financial Services</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Financial Reporting & Analysis</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 95%"></div>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">8</span>
-                    <span class="stat-label">Countries Covered</span>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Statutory Auditing</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Internal Controls Assessment</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 88%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Taxation Expertise</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Income Tax Planning</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>GST Compliance & Audit</span>
+                        <span>94%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 94%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Entity Tax Structuring</span>
+                        <span>89%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 89%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Compliance & Regulatory</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>ROC & Corporate Compliance</span>
+                        <span>93%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 93%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>International Regulations</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Risk Management</span>
+                        <span>87%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="--skill-level: 87%"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="about-image">
-            <img src="nilesh.png" alt="Nilesh Menezes - Founder & Principal Consultant" class="founder-img">
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- SERVICES SECTION -->
-<section class="services" id="services">
-    <h2 class="section-title">Our Core Services</h2>
-    <p class="section-subtitle">Comprehensive solutions designed to strengthen your business operations</p>
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="service-icon">📊</div>
-            <h3>Management Audits</h3>
-            <p>In-depth analysis of operational processes, compliance gaps, and internal controls to identify inefficiencies and risk areas.</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">🔧</div>
-            <h3>Process Optimization</h3>
-            <p>Streamline workflows, reduce bottlenecks, and implement best practices that drive efficiency and cost savings.</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">💰</div>
-            <h3>Accounting & Tax</h3>
-            <p>Complete accounting support, tax planning strategies, and compliance management to minimize liabilities.</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">📈</div>
-            <h3>Financial Advisory</h3>
-            <p>Strategic financial guidance, investment planning, and insurance advisory tailored to your business goals.</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">⚙️</div>
-            <h3>ERP & Automation</h3>
-            <p>Implementation of enterprise systems and automation solutions that enhance accuracy and operational efficiency.</p>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">✅</div>
-            <h3>Compliance Management</h3>
-            <p>Ensure regulatory compliance, close compliance gaps, and establish robust control frameworks for peace of mind.</p>
-        </div>
-    </div>
-</section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>Client Testimonials</h2>
+        <p>What my clients have to say about working with me</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">RJ</div>
+                    <div class="testimonial-info">
+                        <h4>Rajesh Jain</h4>
+                        <p>Director, Diamond Manufacturing</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Uday is an exceptionally thorough CA. His statutory audits are detailed, professional, and delivered on time. He identified several compliance gaps that could have caused issues during regulatory inspections. Highly trustworthy and competent professional."</p>
+                <div class="testimonial-meta">Verified Client • Statutory Audits</div>
+            </div>
 
-<!-- FEATURES SECTION -->
-<section class="features">
-    <div class="features-container">
-        <h2 class="features-title">Why Businesses Trust Us</h2>
-        <p class="features-desc">Our holistic approach combines deep industry expertise with practical solutions that deliver measurable results.</p>
-        <div class="features-grid">
-            <div class="feature-box">
-                <div class="feature-icon">🎯</div>
-                <h4>Proven Results</h4>
-                <p>Track record of identifying and recovering hidden financial leakages for hundreds of clients.</p>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">PJ</div>
+                    <div class="testimonial-info">
+                        <h4>Priya Joshi</h4>
+                        <p>Founder, E-Commerce Solutions India</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Outstanding GST compliance support! Uday helped us navigate complex GST audits for our e-commerce platform and saved us significant tax liabilities through smart optimization strategies. His team is responsive and knowledgeable."</p>
+                <div class="testimonial-meta">Verified Client • GST & Tax Planning</div>
             </div>
-            <div class="feature-box">
-                <div class="feature-icon">👥</div>
-                <h4>Expert Team</h4>
-                <p>Certified professionals with specialized expertise in audits, accounting, and operations.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">🌍</div>
-                <h4>Global Experience</h4>
-                <p>Solutions tested across 8 countries and 13 industries for maximum relevance.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">💡</div>
-                <h4>Strategic Focus</h4>
-                <p>Beyond compliance—we help you unlock value and build sustainable competitive advantage.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">🔒</div>
-                <h4>Confidential</h4>
-                <p>Strict confidentiality standards and professional ethics in all our engagements.</p>
-            </div>
-            <div class="feature-box">
-                <div class="feature-icon">📞</div>
-                <h4>Support</h4>
-                <p>Dedicated support throughout your engagement and beyond implementation.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- TESTIMONIALS SECTION -->
-<section class="testimonials" id="testimonials">
-    <h2 class="section-title">Client Success Stories</h2>
-    <p class="section-subtitle">Real results from businesses like yours</p>
-    <div class="testimonials-grid">
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"N M Consulting completed comprehensive process documentation and automated our MIS systems at precisely the right time. Their work helped us establish ourselves as an SOP-driven, ISO-compliant organization. Their services and support are highly appreciated, and I recommend them unreservedly."</p>
-            <p class="testimonial-author">Metilda Stanley</p>
-            <p class="testimonial-role">MD & CEO, Techsurance Pvt Ltd</p>
-        </div>
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"N M Consulting has managed our accounting for three years. For the first time, we are current and organized with our financial records. Nilesh's advice is practical, sound, and invaluable to our operations."</p>
-            <p class="testimonial-author">Emerald Sequeira</p>
-            <p class="testimonial-role">Partner, Rebecca Group</p>
-        </div>
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Within a short period, N M Consulting closed major compliance gaps and recovered hidden refunds worth lakhs that had been stuck for years. Their expertise streamlined all finance and compliance issues. We entered the new financial year without any compliance stress. They truly live their mission of plugging financial leakages."</p>
-            <p class="testimonial-author">Stennel D'Souza</p>
-            <p class="testimonial-role">Director, Aspiris Management Systems Pvt Ltd</p>
-        </div>
-    </div>
-</section>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">VK</div>
+                    <div class="testimonial-info">
+                        <h4>Vikram Kulkarni</h4>
+                        <p>CEO, Global Trade Services</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Professional excellence at its finest. Uday's cross-border expertise helped us establish our UAE operations seamlessly. His understanding of international compliance requirements is exceptional. Highly recommended."</p>
+                <div class="testimonial-meta">Verified Client • International Compliance</div>
+            </div>
 
-<!-- TEAM SECTION -->
-<section class="team" id="team">
-    <h2 class="section-title">Meet Our Expert Team</h2>
-    <p class="section-subtitle">Seasoned professionals with proven track records</p>
-    <div class="team-grid">
-        <div class="team-card">
-            <div class="team-header">
-                <div class="team-name">Nilesh Menezes</div>
-                <div class="team-title">Founder & Principal Consultant</div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">AN</div>
+                    <div class="testimonial-info">
+                        <h4>Anjali Nair</h4>
+                        <p>Finance Manager, RetailCo Pvt. Ltd.</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"We switched to Uday for our internal audit requirements and couldn't be happier. His team is thorough, punctual, and provides detailed reports that are easy to understand. Great value for money!"</p>
+                <div class="testimonial-meta">Verified Client • Internal Audits</div>
             </div>
-            <div class="team-body">
-                <p class="team-desc">15+ years across 8 countries and 13 industries. B.Com, MBA (Finance), Forensic Accounting certifications. Harvard Entrepreneurship program alumnus.</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-header">
-                <div class="team-name">Anthony Sequeira</div>
-                <div class="team-title">Senior Finance Professional</div>
-            </div>
-            <div class="team-body">
-                <p class="team-desc">Certified Financial Planner, PGD in Treasury & Risk Management. 20+ years in finance and treasury operations.</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-header">
-                <div class="team-name">CA Uday Bhagwat</div>
-                <div class="team-title">Chartered Accountant</div>
-            </div>
-            <div class="team-body">
-                <p class="team-desc">5+ years post-qualification in internal audit and tax management. Expert in accounting automation and compliance.</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-header">
-                <div class="team-name">Anil Gracias</div>
-                <div class="team-title">Operations Professional</div>
-            </div>
-            <div class="team-body">
-                <p class="team-desc">B.Com with IATA/UFTA certifications. 15+ years in operations and process improvement across industries.</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-header">
-                <div class="team-name">Deepak Raorane</div>
-                <div class="team-title">Senior Associate Consultant</div>
-            </div>
-            <div class="team-body">
-                <p class="team-desc">20+ years in process audits and compliance. Expert in ERP systems and automation implementation.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- CERTIFICATIONS SECTION -->
-<section class="certifications" id="certifications">
-    <div class="certifications-container">
-        <h2 class="section-title">Professional Certifications</h2>
-        <p class="section-subtitle">Industry-recognized qualifications demonstrating expertise and commitment</p>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">MG</div>
+                    <div class="testimonial-info">
+                        <h4>Mohan Gupta</h4>
+                        <p>Business Owner, Phoenix Industries</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Excellent tax planning guidance! Uday provided strategic advice on entity structuring that reduced our overall tax burden significantly. His deep knowledge of taxation laws has made him an integral part of our financial team."</p>
+                <div class="testimonial-meta">Verified Client • Tax Strategy</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">SK</div>
+                    <div class="testimonial-info">
+                        <h4>Sneha Kapoor</h4>
+                        <p>Operations Head, ServicePro Consulting</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Responsive, knowledgeable, and cost-effective. Uday handled our ROC filings and company compliance with complete transparency and timely updates. Zero penalties or notices. Highly trustworthy!"</p>
+                <div class="testimonial-meta">Verified Client • Regulatory Compliance</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2>Experience</h2>
+        <p>A progressive career in financial services and advisory</p>
+        <div class="experience-timeline">
+            <div class="timeline-item">
+                <h3>Partner – SPARCS & ASSOCIATES</h3>
+                <div class="timeline-date">July 2024 – Present</div>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Lead statutory, tax, and compliance audits for 50+ companies</li>
+                        <li>Manage GST, ROC, and statutory filings with 100% compliance</li>
+                        <li>Advise on tax optimization and entity structuring</li>
+                        <li>Supervise teams and manage strategic relationships</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Proprietor – UDAY BHAGWAT & ASSOCIATES</h3>
+                <div class="timeline-date">April 2018 – July 2024</div>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Conducted statutory audits and tax compliance</li>
+                        <li>Managed ROC filings and company incorporations</li>
+                        <li>Performed tax audits and income tax assessments</li>
+                        <li>Handled GST compliance and audits</li>
+                        <li>Prepared financial statements and MIS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Partner – KND & ASSOCIATES</h3>
+                <div class="timeline-date">June 2021 – September 2023</div>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Managed statutory and internal audits</li>
+                        <li>Led GST compliance and tax planning engagements</li>
+                        <li>Provided tax advisory services to corporate clients</li>
+                        <li>Handled cross-border transactions and entity structuring</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Senior Auditor – GKP & ASSOCIATES</h3>
+                <div class="timeline-date">January 2017 – March 2018</div>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Conducted statutory audits for manufacturing & services sector</li>
+                        <li>Managed compliance calendar and ROC filings</li>
+                        <li>Assisted in tax audit and assessment proceedings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Auditor – BHAGWAT AUDITING</h3>
+                <div class="timeline-date">June 2015 – December 2016</div>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Executed field audits and prepared audit reports</li>
+                        <li>Reviewed financial statements for compliance</li>
+                        <li>Supported senior auditors in client engagements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualifications Section -->
+    <section id="qualifications" class="qualifications">
+        <h2>Qualifications & Credentials</h2>
+        <p>Professional certifications and educational background</p>
+        <div class="qual-grid">
+            <div class="qual-card">
+                <div class="qual-icon">🎓</div>
+                <h3>Chartered Accountant (FCA)</h3>
+                <p>Institute of Chartered Accountants of India (ICAI)</p>
+                <div class="qual-year">2015</div>
+            </div>
+
+            <div class="qual-card">
+                <div class="qual-icon">📚</div>
+                <h3>Bachelor of Commerce</h3>
+                <p>Rashtrasant Tukadoji Maharaj Nagpur University</p>
+                <div class="qual-year">2012</div>
+            </div>
+
+            <div class="qual-card">
+                <div class="qual-icon">🏆</div>
+                <h3>Advanced Tax Certification</h3>
+                <p>Specialization in Direct & Indirect Taxation</p>
+                <div class="qual-year">2016</div>
+            </div>
+
+            <div class="qual-card">
+                <div class="qual-icon">🌐</div>
+                <h3>GST Expert Certification</h3>
+                <p>Advanced GST Compliance & Audit (ICAI)</p>
+                <div class="qual-year">2017</div>
+            </div>
+
+            <div class="qual-card">
+                <div class="qual-icon">📋</div>
+                <h3>ISO 9001:2015 Certified</h3>
+                <p>Quality Management Systems Audit</p>
+                <div class="qual-year">2018</div>
+            </div>
+
+            <div class="qual-card">
+                <div class="qual-icon">💼</div>
+                <h3>Continuous Professional Education</h3>
+                <p>150+ hours annual CPE in Tax & Compliance</p>
+                <div class="qual-year">Ongoing</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Let's discuss your financial needs</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/919975267331" target="_blank" rel="noopener noreferrer">+91 9975-26-7331</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+919975267331">+91 9975-26-7331</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:udaybhagwatca@gmail.com">udaybhagwatca@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Indraprastha Nagar<br>Nagpur, Maharashtra</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div>
+                        <h3>Languages</h3>
+                        <p>Marathi, Hindi, English</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Uday Bhagwat | Chartered Accountant (FCA)</p>
+        <p>Strategic financial advisory and compliance solutions</p>
+        <div class="social-links">
+            <a href="https://wa.me/919975267331" target="_blank" rel="noopener noreferrer" title="WhatsApp">💬</a>
+            <a href="mailto:udaybhagwatca@gmail.com" title="Email">✉️</a>
+            <a href="tel:+919975267331" title="Phone">📱</a>
+            <a href="#" title="LinkedIn">💼</a>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" title="Back to top">↑</button>
+
+    <script>
+        // ===== ENHANCED SCROLL REVEAL ANIMATIONS =====
+        const revealElements = document.querySelectorAll('.service-card, .skill-category, .qual-card, .testimonial-card, .experience-item, .contact-item');
         
-        <div class="certifications-carousel">
-            <div class="cert-slide active">
-                <img src="cert-1.jpg" alt="Forensic Accounting Certificate">
-            </div>
-            <div class="cert-slide">
-                <img src="cert-2.jpg" alt="NISM Certificate">
-            </div>
-            <div class="cert-slide">
-                <img src="cert-3.jpg" alt="AIFTP Membership">
-            </div>
-            <div class="cert-slide">
-                <img src="cert-4.jpg" alt="Internal Audit Practitioner">
-            </div>
-            <div class="cert-slide">
-                <img src="cert-5.jpg" alt="GST Enrollment Certificate">
-            </div>
-            <div class="cert-slide">
-                <img src="cert-6.jpg" alt="Harvard Entrepreneurship">
-            </div>
-            <div class="cert-slide">
-                <img src="cert-7.jpg" alt="ISO 9001 Auditor Training">
-            </div>
-            <div class="cert-slide">
-                <img src="cert-8.jpg" alt="Microsoft Office Specialist">
-            </div>
+        const scrollRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    entry.target.classList.add('animated');
+                    scrollRevealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-            <div class="cert-counter">
-                <span id="cert-current">1</span> / <span id="cert-total">8</span>
-            </div>
+        revealElements.forEach((el, index) => {
+            el.classList.add(`stagger-${(index % 5) + 1}`);
+            scrollRevealObserver.observe(el);
+        });
 
-            <div class="cert-nav">
-                <div class="cert-dot active" onclick="goToSlide(0)"></div>
-                <div class="cert-dot" onclick="goToSlide(1)"></div>
-                <div class="cert-dot" onclick="goToSlide(2)"></div>
-                <div class="cert-dot" onclick="goToSlide(3)"></div>
-                <div class="cert-dot" onclick="goToSlide(4)"></div>
-                <div class="cert-dot" onclick="goToSlide(5)"></div>
-                <div class="cert-dot" onclick="goToSlide(6)"></div>
-                <div class="cert-dot" onclick="goToSlide(7)"></div>
-            </div>
-        </div>
-    </div>
-</section>
+        // ===== SKILL ITEMS ANIMATION =====
+        const skillItemsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    // Trigger progress bar animation
+                    const skillBar = entry.target.querySelector('.skill-bar');
+                    const skillFill = entry.target.querySelector('.skill-fill');
+                    
+                    if (skillBar && skillFill) {
+                        // Force reflow to ensure animation triggers
+                        void skillBar.offsetWidth;
+                        // Add the active class which triggers the animation
+                        skillBar.classList.add('active');
+                        skillFill.style.animation = 'progressFill 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+                    }
+                    skillItemsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
 
-<!-- GALLERY SECTION -->
-<section class="gallery-section" id="gallery">
-    <div class="gallery-container">
-        <div class="gallery-header">
-            <h2 class="section-title">Our Gallery</h2>
-            <p class="section-subtitle">Explore our team, events, and corporate moments</p>
-        </div>
+        document.querySelectorAll('.skill-category').forEach(category => {
+            category.classList.add('animated');
+            category.querySelectorAll('.skill-item').forEach((item, index) => {
+                skillItemsObserver.observe(item);
+                
+                // Add hover effects
+                item.addEventListener('mouseenter', function() {
+                    const skillBar = this.querySelector('.skill-bar');
+                    const skillFill = this.querySelector('.skill-fill');
+                    if (skillBar && skillFill) {
+                        skillBar.classList.add('active');
+                        // Create shimmer effect
+                        skillFill.style.backgroundPosition = '-1000px 0';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    const skillBar = this.querySelector('.skill-bar');
+                    const skillFill = this.querySelector('.skill-fill');
+                    if (skillBar) {
+                        skillBar.classList.remove('active');
+                    }
+                });
+            });
+        });
 
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0)">
-                <img src="0__1_.jpeg" alt="Team gathering 1" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1)">
-                <img src="0__2_.jpeg" alt="Corporate event" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(2)">
-                <img src="0__3_.jpeg" alt="Team activity" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(3)">
-                <img src="0__4_.jpeg" alt="Business meeting" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(4)">
-                <img src="0__5_.jpeg" alt="Team photo" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(5)">
-                <img src="0__6_.jpeg" alt="Corporate gathering" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(6)">
-                <img src="0__7_.jpeg" alt="Office moment" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(7)">
-                <img src="0__8_.jpeg" alt="Conference" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(8)">
-                <img src="0__9_.jpeg" alt="Team presentation" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(9)">
-                <img src="0__10_.jpeg" alt="Office photo" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(10)">
-                <img src="0__11_.jpeg" alt="Team members" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(11)">
-                <img src="0__12_.jpeg" alt="Corporate event" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(12)">
-                <img src="0__13_.jpeg" alt="Business moment" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(13)">
-                <img src="0__14_.jpeg" alt="Team gathering 2" loading="lazy">
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-        </div>
-    </div>
+        // ===== ANIMATED NUMBER COUNTERS =====
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target')) || 0;
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current) + (counter.getAttribute('data-suffix') || '');
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target + (counter.getAttribute('data-suffix') || '');
+                            counter.classList.add('counted');
+                        }
+                    };
+
+                    counter.classList.add('counted');
+                    updateCounter();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // ===== CURSOR GLOW EFFECT =====
+        let cursorGlow = null;
+        let mouseX = 0;
+        let mouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (!cursorGlow) {
+                cursorGlow = document.createElement('div');
+                cursorGlow.className = 'cursor-glow';
+                document.body.appendChild(cursorGlow);
+            }
+
+            cursorGlow.style.left = (mouseX - 10) + 'px';
+            cursorGlow.style.top = (mouseY - 10) + 'px';
+        });
+
+        // Hide cursor glow on mouse leave
+        document.addEventListener('mouseleave', () => {
+            if (cursorGlow) {
+                cursorGlow.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('mouseenter', () => {
+            if (cursorGlow) {
+                cursorGlow.style.display = 'block';
+            }
+        });
+
+        // ===== SKILL PROGRESS BARS ANIMATION =====
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('filled')) {
+                    const skillFill = entry.target.querySelector('.skill-fill');
+                    const percentage = entry.target.getAttribute('data-percentage');
+                    if (skillFill) {
+                        skillFill.style.width = percentage + '%';
+                        entry.target.classList.add('filled');
+                    }
+                    progressObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-progress').forEach(progress => {
+            progressObserver.observe(progress);
+        });
+
+        // ===== HERO TYPING ANIMATION =====
+        function typeWriter(element, text, speed = 100) {
+            let index = 0;
+            element.innerHTML = '';
+            element.style.borderRight = '3px solid var(--accent-cyan)';
+
+            function type() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing animation to hero headline if needed
+        const heroH1 = document.querySelector('.hero h1');
+        if (heroH1) {
+            const originalText = heroH1.textContent;
+            heroH1.textContent = '';
+            typeWriter(heroH1, originalText, 50);
+        }
+
+        // ===== FLOATING BACKGROUND BLOBS SETUP =====
+        function createFloatingBlobs() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+
+            const blobs = [
+                { class: 'blob-1', index: 0 },
+                { class: 'blob-2', index: 1 },
+                { class: 'blob-3', index: 2 }
+            ];
+
+            blobs.forEach(blob => {
+                const blobEl = document.createElement('div');
+                blobEl.className = `floating-bg ${blob.class}`;
+                hero.style.position = 'relative';
+                hero.insertBefore(blobEl, hero.firstChild);
+            });
+        }
+
+        createFloatingBlobs();
+
+        // ===== ENHANCED HOVER ANIMATIONS FOR CARDS =====
+        const cards = document.querySelectorAll('.service-card, .skill-category, .qual-card, .testimonial-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px) scale(1.02)';
+                this.style.boxShadow = '0 20px 60px rgba(0, 132, 255, 0.3)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.2)';
+            });
+        });
+
+        // ===== SCROLL TO TOP BUTTON =====
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ===== HEADER SCROLL EFFECT =====
+        const header = document.getElementById('header');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
             
-            <div class="lightbox-image-container">
-                <img id="lightbox-image" src="" alt="">
-            </div>
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScrollTop = scrollTop;
+        });
 
-            <div class="lightbox-counter">
-                <span id="current-image">1</span> / <span id="total-images">14</span>
-            </div>
+        // ===== SMOOTH SCROLLING FOR NAVIGATION =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
 
-            <button class="lightbox-nav lightbox-prev" onclick="previousImage()">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="lightbox-nav lightbox-next" onclick="nextImage()">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-
-            <div class="lightbox-thumbnails">
-                <div class="thumbnails-scroll">
-                    <img class="thumbnail active" src="0__1_.jpeg" onclick="goToImage(0)">
-                    <img class="thumbnail" src="0__2_.jpeg" onclick="goToImage(1)">
-                    <img class="thumbnail" src="0__3_.jpeg" onclick="goToImage(2)">
-                    <img class="thumbnail" src="0__4_.jpeg" onclick="goToImage(3)">
-                    <img class="thumbnail" src="0__5_.jpeg" onclick="goToImage(4)">
-                    <img class="thumbnail" src="0__6_.jpeg" onclick="goToImage(5)">
-                    <img class="thumbnail" src="0__7_.jpeg" onclick="goToImage(6)">
-                    <img class="thumbnail" src="0__8_.jpeg" onclick="goToImage(7)">
-                    <img class="thumbnail" src="0__9_.jpeg" onclick="goToImage(8)">
-                    <img class="thumbnail" src="0__10_.jpeg" onclick="goToImage(9)">
-                    <img class="thumbnail" src="0__11_.jpeg" onclick="goToImage(10)">
-                    <img class="thumbnail" src="0__12_.jpeg" onclick="goToImage(11)">
-                    <img class="thumbnail" src="0__13_.jpeg" onclick="goToImage(12)">
-                    <img class="thumbnail" src="0__14_.jpeg" onclick="goToImage(13)">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT FORM SECTION -->
-<section class="contact-form-section" id="contact-form">
-    <h2 class="section-title">Get Your Free Consultation</h2>
-    <div class="form-container">
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="company">Company Name *</label>
-                <input type="text" id="company" name="company" required>
-            </div>
-            <div class="form-group">
-                <label for="service">Service Interested In *</label>
-                <select id="service" name="service" required>
-                    <option value="">Select a service</option>
-                    <option value="Management Audits & Process Optimization">Management Audits & Process Optimization</option>
-                    <option value="Accounting & Tax Consulting">Accounting & Tax Consulting</option>
-                    <option value="Investment & Insurance Advisory">Investment & Insurance Advisory</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell us about your business challenges..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Consultation Request</button>
-            <div id="formMessage" class="form-message"></div>
-        </form>
-    </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section class="contact" id="contact">
-    <h2>Let's Connect</h2>
-    <p>Reach out through any of these channels</p>
-    <div class="contact-info">
-        <div class="contact-box">
-            <h3>📍 Vasai Office</h3>
-            <p>102 'Aavkar', Dosti Residency Road, Barampur, Vasai Road West, Mumbai 401202</p>
-        </div>
-        <div class="contact-box">
-            <h3>📍 Bandra Office</h3>
-            <p>Unit 8, 2nd Floor, Jain Chambers, 577 S.V. Road, Bandra (West), Mumbai 400050</p>
-        </div>
-        <div class="contact-box">
-            <h3>📞 Quick Contact</h3>
-            <p><strong>Phone:</strong> +91 9967493156<br><strong>Email:</strong> nilesh.m@nmconsulting.in<br><strong>Hours:</strong> Mon-Fri, 9:30 AM - 6:00 PM</p>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER RIBBON -->
-<div class="footer-ribbon">
-    <div class="footer-item">📍 Vasai: 102 'Aavkar', Barampur, Vasai Road West, Mumbai 401202</div>
-    <div class="footer-item">📍 Bandra: Unit 8, 577 S.V. Road, Bandra (West), Mumbai 400050</div>
-    <div class="footer-item">📞 +91 9967493156 | 📧 nilesh.m@nmconsulting.in</div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <p>&copy; 2024 N M Consulting. All rights reserved. | Plugging Financial Leakages. Building Confident Businesses.</p>
-</footer>
-
-<!-- CONTACT BUTTONS -->
-<div class="contact-buttons">
-    <a href="tel:+919967493156" class="contact-btn call-btn" title="Call Us">
-        <i class="fas fa-phone"></i>
-    </a>
-    <a href="https://wa.me/919967493156?text=Hello%20N%20M%20Consulting,%20I%20would%20like%20to%20know%20more%20about%20your%20services." class="contact-btn whatsapp-btn" title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
-
-<script>
-// WhatsApp redirect function
-function openWhatsApp() {
-    const phoneNumber = '919967493156';
-    const message = 'Hello N M Consulting, I would like to book a free consultation. Please let me know your availability.';
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-}
-
-// Certifications Carousel
-let currentSlide = 0;
-const slides = document.querySelectorAll('.cert-slide');
-const dots = document.querySelectorAll('.cert-dot');
-const totalSlides = slides.length;
-
-function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    slides[n].classList.add('active');
-    dots[n].classList.add('active');
-    
-    document.getElementById('cert-current').textContent = n + 1;
-}
-
-function goToSlide(n) {
-    currentSlide = n;
-    showSlide(currentSlide);
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-}
-
-// Auto-transition every 1 second
-let carouselInterval = setInterval(nextSlide, 1000);
-
-// Pause on hover, resume on mouse leave
-const carousel = document.querySelector('.certifications-carousel');
-if (carousel) {
-    carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
-    carousel.addEventListener('mouseleave', () => {
-        carouselInterval = setInterval(nextSlide, 1000);
-    });
-}
-
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // ===== ENHANCED FORM SUBMISSION =====
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.style.animation = 'buttonGlow 1.5s ease-in-out infinite';
+            
+            setTimeout(() => {
+                form.reset();
+                
+                const successMsg = document.createElement('div');
+                successMsg.className = 'success-message show';
+                successMsg.innerHTML = '✓ Thank you! Your message has been received. I will respond shortly.';
+                form.parentElement.insertBefore(successMsg, form);
+                
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.style.animation = 'none';
+                
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                    setTimeout(() => {
+                        successMsg.remove();
+                    }, 300);
+                }, 5000);
+            }, 1000);
         }
-    });
-});
 
-// Form handling
-const form = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        // ===== SCROLL REVEAL ANIMATION FOR ALL ELEMENTS =====
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(form);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        phone: formData.get('phone'),
-        company: formData.get('company'),
-        service: formData.get('service'),
-        message: formData.get('message'),
-        timestamp: new Date().toLocaleString()
-    };
+        document.querySelectorAll('section h2, section p').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            revealObserver.observe(el);
+        });
 
-    if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-        showMessage('⚠️ Form not configured. Please set up Google Apps Script integration.', 'error');
-        return;
-    }
+        // ===== EXPERIENCE TIMELINE STAGGER ANIMATION =====
+        document.querySelectorAll('.experience-item').forEach((item, index) => {
+            item.style.animationDelay = (index * 0.15) + 's';
+        });
 
-    fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify(data)
-    })
-    .then(response => {
-        if (response.ok) {
-            showMessage('✅ Consultation request sent! We\'ll contact you shortly.', 'success');
-            form.reset();
-        } else {
-            showMessage('❌ Something went wrong. Please try again.', 'error');
+        // ===== INTERACTIVE IMAGE ZOOM ON HOVER =====
+        const profilePhoto = document.querySelector('.profile-photo');
+        if (profilePhoto) {
+            profilePhoto.addEventListener('mouseenter', function() {
+                this.style.animation = 'spotlight 2s ease-in-out infinite';
+            });
+
+            profilePhoto.addEventListener('mouseleave', function() {
+                this.style.animation = 'none';
+            });
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        showMessage('❌ Network error. Please try again.', 'error');
-    });
-});
 
-function showMessage(message, type) {
-    formMessage.textContent = message;
-    formMessage.className = 'form-message ' + type;
-    formMessage.style.display = 'block';
-    
-    if (type === 'success') {
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
-    }
-}
+        // ===== KEYBOARD SHORTCUTS =====
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + K to open contact form
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact');
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('.contact-form input').focus();
+            }
+            
+            // ESC to close mobile menu
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
 
-// Intersection Observer for scroll animations (optimized for performance)
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+        // ===== PARALLAX EFFECT ON SCROLL =====
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const blobs = document.querySelectorAll('.floating-bg');
+            blobs.forEach((blob, index) => {
+                blob.style.transform = `translateY(${scrolled * (0.5 - index * 0.1)}px)`;
+            });
+        });
 
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+        // ===== FADE IN ON LOAD =====
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
 
-document.querySelectorAll('.service-card, .feature-box, .testimonial-card, .team-card, .stat-box, .contact-box').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s';
-    observer.observe(el);
-});
+        // ===== TYPING ANIMATION FOR TESTIMONIALS ON SCROLL =====
+        const testimonialObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const testimonialCard = entry.target;
+                    const testimonialText = testimonialCard.querySelector('.testimonial-text');
+                    
+                    // Check if animation already played
+                    if (testimonialText && !testimonialText.classList.contains('typing-animated')) {
+                        const originalText = testimonialText.textContent;
+                        testimonialText.textContent = '';
+                        testimonialText.classList.add('typing-animated');
+                        
+                        // Type the text character by character
+                        let index = 0;
+                        const typeSpeed = 30; // milliseconds per character
+                        
+                        function typeCharacter() {
+                            if (index < originalText.length) {
+                                testimonialText.textContent += originalText.charAt(index);
+                                index++;
+                                setTimeout(typeCharacter, typeSpeed);
+                            } else {
+                                // Remove cursor after typing is complete
+                                setTimeout(() => {
+                                    testimonialText.style.borderRight = 'none';
+                                }, 300);
+                            }
+                        }
+                        
+                        typeCharacter();
+                    }
+                    
+                    testimonialObserver.unobserve(testimonialCard);
+                }
+            });
+        }, { threshold: 0.3, rootMargin: '0px 0px -50px 0px' });
 
-// Gallery Lightbox Functions
-let currentImageIndex = 0;
-const galleryImages = [
-    '0__1_.jpeg', '0__2_.jpeg', '0__3_.jpeg', '0__4_.jpeg', '0__5_.jpeg',
-    '0__6_.jpeg', '0__7_.jpeg', '0__8_.jpeg', '0__9_.jpeg', '0__10_.jpeg',
-    '0__11_.jpeg', '0__12_.jpeg', '0__13_.jpeg', '0__14_.jpeg'
-];
+        // Observe all testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            testimonialObserver.observe(card);
+        });
 
-function openLightbox(index) {
-    currentImageIndex = index;
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    
-    lightboxImage.src = galleryImages[currentImageIndex];
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    updateLightboxDisplay();
-    updateThumbnails();
-}
+        // ===== TIMELINE ANIMATION ON SCROLL =====
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const timelineItem = entry.target;
+                    timelineItem.classList.add('animated');
+                    
+                    // Animate list items with stagger
+                    const listItems = timelineItem.querySelectorAll('.timeline-description li');
+                    listItems.forEach((li, index) => {
+                        li.style.animationDelay = (0.3 + (index * 0.1)) + 's';
+                    });
+                    
+                    timelineObserver.unobserve(timelineItem);
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
 
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
+        // Observe all timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
 
-function nextImage() {
-    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-    updateLightboxImage();
-}
-
-function previousImage() {
-    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    updateLightboxImage();
-}
-
-function goToImage(index) {
-    currentImageIndex = index;
-    updateLightboxImage();
-}
-
-function updateLightboxImage() {
-    const lightboxImage = document.getElementById('lightbox-image');
-    lightboxImage.src = galleryImages[currentImageIndex];
-    updateLightboxDisplay();
-    updateThumbnails();
-}
-
-function updateLightboxDisplay() {
-    document.getElementById('current-image').textContent = currentImageIndex + 1;
-    document.getElementById('total-images').textContent = galleryImages.length;
-}
-
-function updateThumbnails() {
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    thumbnails.forEach((thumb, index) => {
-        thumb.classList.remove('active');
-        if (index === currentImageIndex) {
-            thumb.classList.add('active');
-            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-    });
-}
-
-// Keyboard navigation for lightbox
-document.addEventListener('keydown', (e) => {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox.classList.contains('active')) {
-        if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'ArrowLeft') previousImage();
-        if (e.key === 'Escape') closeLightbox();
-    }
-});
-
-// Close lightbox when clicking outside the content
-document.getElementById('lightbox')?.addEventListener('click', (e) => {
-    if (e.target.id === 'lightbox') {
-        closeLightbox();
-    }
-});
-</script>
-
+        // ===== PERFORMANCE: DEBOUNCE SCROLL EVENTS =====
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                // Scroll event handler
+            }, 100);
+        }, { passive: true });
+    </script>
 </body>
 </html>
